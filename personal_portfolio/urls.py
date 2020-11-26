@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# We're adding this so that we can work with the images
+# that are uploaded with our portfolio app
+# note, we also added to the settings.py file
+from django.conf.urls.static import static
+from django.conf import settings
+
+from portfolio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name="home"),
 ]
+
+# note, can't use append here, have to use +=
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

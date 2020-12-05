@@ -25,7 +25,7 @@ SECRET_KEY = 'g77aw6&fmjd28&!ejld1=@v(5jf+d5)bu3=(7q$5@%j)or(b-d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://mdjco.pythonanywhere.com/', 'localhost']
 
 
 # Application definition

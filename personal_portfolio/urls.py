@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 # We're adding this so that we can work with the images
 # that are uploaded with our portfolio app
 # note, we also added to the settings.py file
@@ -26,6 +26,7 @@ from portfolio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    path('blog/', include('blog.urls')),
 ]
 
 # note, can't use append here, have to use +=
